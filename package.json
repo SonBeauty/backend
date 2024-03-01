@@ -28,8 +28,10 @@
     "@nestjs/mongoose": "^10.0.4",
     "@nestjs/platform-express": "^9.0.0",
     "bcrypt": "^5.1.1",
+    "mongoose": "^8.2.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "vercel": "^33.5.3"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
