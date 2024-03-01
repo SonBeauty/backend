@@ -7,7 +7,6 @@ import { UsersModule } from './users/users.module';
 import { CommentModule } from './comment/comment.module';
 import { PostModule } from './post/post.module';
 import { JwtModule } from '@nestjs/jwt';
-import { CorsModule } from '@nestjs/common';
 
 @Module({
   imports: [
@@ -18,12 +17,6 @@ import { CorsModule } from '@nestjs/common';
     UsersModule,
     CommentModule,
     PostModule,
-    CorsModule.forRoot({
-      origin: true,
-      methods: ['GET', 'POST', 'PUT', 'DELETE'], // list of allowed HTTP methods
-      allowedHeaders: ['Content-Type', 'Authorization'], // list of allowed headers
-      credentials: true,
-    }),
   ],
   controllers: [AppController],
   providers: [AppService],
