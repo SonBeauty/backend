@@ -39,11 +39,11 @@ export class UsersService {
     const { username, password } = login;
     const user = await this.userModel.findOne({ username }).exec();
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Invalid username');
     }
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('wrong password ');
     }
     const token = this.jwtService.sign({
       id: user._id,
@@ -51,6 +51,7 @@ export class UsersService {
     return {
       message: 'login success',
       token,
+      user,
     };
   }
 

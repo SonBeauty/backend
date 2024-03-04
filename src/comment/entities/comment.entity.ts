@@ -13,7 +13,7 @@ export class Comment extends Document {
   postId: Post;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  userId: User;
+  owner: User;
 
   @Prop({ type: Date, default: Date.now })
   created_at: Date;
