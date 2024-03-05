@@ -11,9 +11,7 @@ import { JwtModule } from '@nestjs/jwt';
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
-    MongooseModule.forRoot(
-      'mongodb+srv://sonnguyentruong201:rhxe4ooYmRU7g0h9@cluster0.64ay48k.mongodb.net/',
-    ),
+    MongooseModule.forRoot(`${process.env.DB}`),
     UsersModule,
     CommentModule,
     PostModule,
